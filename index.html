@@ -11,16 +11,14 @@
         <img src="https://hanashiro.github.io/pokedex/images/pokeball.svg" class="pokeball-back" >
         <input type="text" id="pokeFilter" placeholder="Search" maxlength="20" />
         <ul class="poke-list" >
-            <li v-for="item in pokemonList" class="poke-list-item" >
-                <img :src="'https://serebii.net/pokedex-xy/icon/'+item.number+'.png'" />
-                <span>{{item.number | pokeNumber}} - {{item.name}}</span>
-            </li>
+            <poke-list v-for="item in pokemonList" :pokemon="item" :key="item.number" ></poke-list>
         </ul>
     </div>
 
 
 
     <script src="https://unpkg.com/vue/dist/vue.js" ></script>
+    <script src="./js/listcomponent.js"></script>
     <script src="./js/filters.js"></script>
     <script src="./js/app.js"></script>
 </body>
