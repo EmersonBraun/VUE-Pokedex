@@ -9,7 +9,7 @@
 
     <div id="app" >
         <img v-rotate-on-scroll src="https://hanashiro.github.io/pokedex/images/pokeball.svg" class="pokeball-back" >
-        <input type="text" id="pokeFilter" placeholder="Search" maxlength="20" />
+        <input v-model="nameFilter" type="text" id="pokeFilter" placeholder="Search" maxlength="20" />
         <ul class="poke-list" >
             <poke-list v-for="item in pokeList" :pokemon="item" :key="item.number" ></poke-list>
         </ul>
@@ -18,6 +18,8 @@
 
 
     <script src="https://unpkg.com/vue/dist/vue.js" ></script>
+    <script src="https://unpkg.com/vue-router" ></script>
+    <script src="./js/services.js"></script>
     <script src="./js/directives.js"></script>
     <script src="./js/listcomponent.js"></script>
     <script src="./js/filters.js"></script>
