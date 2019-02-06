@@ -1,9 +1,11 @@
 Vue.component('poke-list', {
     template: `
-        <li class="poke-list-item" >
-            <img :src="sprite" />
-            <span>{{pokemon.number | pokeNumber}} - {{pokemon.name}}</span>
-        </li>
+        <router-link :to="number">
+            <li class="poke-list-item" >
+                <img :src="sprite" />
+                <span>{{pokemon.number | pokeNumber}} - {{pokemon.name}}</span>
+            </li>
+        </router-link>
     `,
     props: ['pokemon'],
     computed: {

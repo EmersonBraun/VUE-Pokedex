@@ -17,6 +17,9 @@ var PokeService = {
                             .filter(pokemon => pokemon.number < 1000)
                             .sort((a, b) => (a.number > b.number ? 1 : -1) )
                     })
+            },
+            find: (number) => {
+                return PokeService.API.get(`pokemon/${number}`);
             }
         }
     },
